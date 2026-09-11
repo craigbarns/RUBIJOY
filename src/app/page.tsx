@@ -5,13 +5,13 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center">
       {/* Hero Section */}
-      <section className="w-full relative h-[80vh] min-h-[600px] flex items-center justify-center animate-reveal">
+      <section className="w-full relative h-[85svh] md:h-[80vh] min-h-[500px] md:min-h-[600px] flex items-center justify-center animate-reveal">
         <img src="/images/vogue/ella_james_5.jpg" alt="Bride in château doorway or recessional" className="w-full h-full object-cover absolute inset-0" />
         <div className="absolute inset-0 bg-black/10"></div>
       </section>
 
       {/* Opening Statement */}
-      <section className="w-full max-w-[800px] mx-auto px-6 py-32 text-center animate-reveal">
+      <section className="w-full max-w-[800px] mx-auto px-6 py-20 md:py-32 text-center animate-reveal">
         <p className="font-serif text-2xl md:text-4xl leading-relaxed text-[#2A2A28]">
           There is a corner of France that most people never find. Ancient stone, unhurried afternoons, and the kind of beauty that stays with you. I have lived in the Occitanie region for twenty years, between the foothills of the Pyrenees and the Montagne Noire, and I plan weddings for couples who have discovered the beauty of this area and cannot imagine getting married anywhere else.
         </p>
@@ -31,7 +31,7 @@ export default function Home() {
       </section>
 
       {/* What I Do */}
-      <section className="w-full max-w-[1000px] mx-auto px-6 py-32 animate-reveal">
+      <section className="w-full max-w-[1000px] mx-auto px-6 py-20 md:py-32 animate-reveal">
         <h2 className="font-serif text-3xl md:text-5xl mb-16 text-center">
           Destination weddings in the foothills of the Pyrenees and beyond
         </h2>

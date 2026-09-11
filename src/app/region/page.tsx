@@ -11,7 +11,7 @@ export default function Region() {
   return (
     <div className="flex flex-col items-center">
       {/* Hero Section */}
-      <section className="w-full relative h-[70vh] min-h-[500px] flex items-center justify-center animate-reveal">
+      <section className="w-full relative h-[85svh] md:h-[70vh] min-h-[500px] flex items-center justify-center animate-reveal">
         <img src="/images/july2024-293_orig.jpg" alt="Region Hero" className="w-full h-full object-cover absolute inset-0 bg-[#e0d6c8]" />
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="relative z-10 text-center px-6">

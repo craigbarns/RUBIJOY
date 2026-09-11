@@ -68,21 +68,54 @@ export default function Header() {
 
       {/* Mobile Navigation Overlay */}
       <div
-        className={`fixed inset-0 bg-background z-40 flex flex-col justify-center items-center transition-opacity duration-500 md:hidden ${
+        className={`fixed inset-0 bg-[#F5F0E8] z-40 flex flex-col justify-between items-center transition-all duration-700 md:hidden ${
           isMobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
       >
-        <nav className="flex flex-col items-center gap-8">
-          {navLinks.map((link) => (
+        <div className="w-full flex justify-center mt-10">
+          {/* We keep the top space for the close button to breathe */}
+        </div>
+        
+        <nav className="flex flex-col items-center gap-10 mt-12">
+          {navLinks.map((link, index) => (
             <Link
               key={link.name}
               href={link.href}
-              className="font-sans text-sm uppercase tracking-[0.2em] text-[#2A2A28] hover:text-accent transition-colors"
+              className="font-serif text-3xl tracking-wide text-[#2A2A28] hover:text-accent transition-colors relative group"
+              style={{
+                transitionDelay: isMobileMenuOpen ? \`\${index * 100 + 100}ms\` : '0ms',
+                opacity: isMobileMenuOpen ? 1 : 0,
+                transform: isMobileMenuOpen ? 'translateY(0)' : 'translateY(20px)',
+                transitionProperty: 'opacity, transform, color'
+              }}
             >
               {link.name}
+              <span className="absolute -bottom-2 left-1/2 w-0 h-[1px] bg-accent transition-all duration-500 group-hover:w-full group-hover:left-0"></span>
             </Link>
           ))}
         </nav>
+
+        <div 
+          className="mb-16 flex flex-col items-center gap-6"
+          style={{
+            transitionDelay: isMobileMenuOpen ? '700ms' : '0ms',
+            opacity: isMobileMenuOpen ? 1 : 0,
+            transform: isMobileMenuOpen ? 'translateY(0)' : 'translateY(20px)',
+            transitionProperty: 'opacity, transform'
+          }}
+        >
+          <p className="font-sans text-[10px] uppercase tracking-widest text-[#2A2A28]/60">
+            sandra@rubijoy.com
+          </p>
+          <a
+            href="https://instagram.com/rubijoy_weddings"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-sans text-xs uppercase tracking-widest text-[#2A2A28] hover:text-accent transition-colors"
+          >
+            Instagram
+          </a>
+        </div>
       </div>
     </header>
   );
